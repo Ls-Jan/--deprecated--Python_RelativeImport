@@ -34,5 +34,65 @@ RImport('A/M','info')#导入A目录下的模块M中名为info的变量。【等�
 - ``RImport('M',('info','i'),('func','f'))``：导入模块M中的info和func并分别命名为i和f。【等同``from M import info as i,func as f``】
 
 
+<br>
+
+
+## 例子：
+
+附上一份测试样例test，其中两份代码，一个是使用相对导入，另一个是用RImport，两份代码的目录结构都是一样的：
+```
++--A.py
+|
++--M1
+   |
+   +--B.py
+   |
+   +--M2
+      |
+      +--C.py
+```
+T1代码：
+```python
+#A.py
+from M1.B import *
+a=1
+print(f'A:{a,b,c}')
+
+
+#B.py
+from .M2.C import c
+b=2
+print(f'B:{b,c}')
+
+
+#C.py
+c=3
+print(f'C:{c}')
+```
+
+T2代码：
+```python
+#A.py
+from RelativeImport import RImport
+RImport('M1.B','*')
+a=1
+print(f'A:{a,b,c}')
+
+
+#B.py
+from RelativeImport import RImport
+RImport('M2.C','c')
+b=2
+print(f'B:{b,c}')
+
+
+#C.py
+c=3
+print(f'C:{c}')
+```
+
+分别运行每个单独的py文件后，T1中的B.py运行报错，原因是使用了相对导入，但T2用RImport规避了这个问题，满足了B.py单独运行测试的情况。<br>
+好像py古老版本(py2.x)原本就支持相对导入的，但不知为啥又撤走了，或许是为了增强“包”的概念？毕竟“相对导入”用于文件关联性强的“包”，<br>
+但也多亏这画蛇添足的改动，单文件受阻于“相对导入问题”没法很好的进行测试。(估计规范的包的脚本测试是在顶层目录额外创建测试文件进行的
 
 
