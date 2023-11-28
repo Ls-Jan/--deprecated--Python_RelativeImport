@@ -13,11 +13,11 @@
 ## 用法：
 ```python
 from RelativeImport import RImport
-RImport('M')#导入模块M。【等同import M】
-RImport('M','info','func')#导入模块M中的info和func。【等同from M import info,func】
-RImport('M','*')#导入模块M中所有内容。【等同from M import *】
+RImport('M')#导入模块M。【等同import M】【类似from . import M但规避了“相对导入”问题】
+RImport('M','info','func')#导入模块M中的info和func。【等同from M import info,func】【类似from .M import info,func但规避了“相对导入”问题】
+RImport('M','*')#导入模块M中所有内容。【等同from M import *】【类似from .M import *但规避了“相对导入”问题】
 RImport('../M')#导入上级目录中的模块M。【类似from .. import M但规避了“相对导入”问题】
-RImport('A/M','info')#导入A目录下的模块M中名为info的变量。【类似from A.M import info但规避了“相对导入”问题】
+RImport('A/M','info')#导入A目录下的模块M中名为info的变量。【等同from A.M import info】【类似from .A.M import info但规避了“相对导入”问题】
 
 ```
 (本来打算函数名``RelativeImport``原封不动的，但发现每次都打那么长的字串就很烦，然后改成``RImport``
