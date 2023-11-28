@@ -1,9 +1,0 @@
-README.md
-setup.py
-RelativeImport/RelativeImport.py
-RelativeImport/__init__.py
-RelativeImport.egg-info/PKG-INFO
-RelativeImport.egg-info/SOURCES.txt
-RelativeImport.egg-info/dependency_links.txt
-RelativeImport.egg-info/not-zip-safe
-RelativeImport.egg-info/top_level.txt
