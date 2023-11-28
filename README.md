@@ -25,8 +25,7 @@ RImport('A/M','info')#导入A目录下的模块M中名为info的变量。【类�
 ## 说明：
 
 #### 主要用于相对路径模块的导入，但实际上也可以正常导入其他模块：
-- ``RImport(('numpy','np'))``等效于``import numpy as np``
-
+- ``RImport('numpy')``等效于``import numpy``
 
 #### 特别的，支持“重命名”行为：
 - ``RImport(('M','mmm'))``：导入模块M并命名为mmm。【等同``import M as mmm``】
