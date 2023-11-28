@@ -5,9 +5,10 @@
 ## 安装：
 原本是打算发布pypi的，但发现近段时间都没法注册新用户，然后就算了。<br>
 1. 下载轮子：[RelativeImport-1.1-py3-none-any.whl](https://github.com/Ls-Jan/Python_RelativeImport/releases/download/v1.1/RelativeImport-1.1-py3-none-any.whl)
-2. 安装轮子``pip install RelativeImport-1.1-py3-none-any.whl``
+2. 安装轮子：``pip install RelativeImport-1.1-py3-none-any.whl``
+3. ~成为轮子~
 
-建议还是安装比较好，不然每个子目录都得拖进一个``RelativeImport.py``文件就很蠢，不然就是把``RelativeImport.py``这个文件放到环境路径上(虽然这做法也很蠢
+建议还是安装比较好，不然每个子目录都得拖进一个``RelativeImport.py``文件就很蠢，不然就是把``RelativeImport.py``这个文件放到环境路径上(虽然这做法也好不到哪去
 
 ## 用法：
 ```python
